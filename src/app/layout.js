@@ -1,7 +1,18 @@
-import { Inter } from "next/font/google";
+import { Inter, Euphoria_Script, Exo } from "next/font/google";
 import "./globals.css";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const euphoria = Euphoria_Script({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400"
+})
+const exo = Exo({
+  subsets: ["latin"],
+  display: "swap"
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -25,3 +36,12 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// export default function Layout({children}) {
+//   return(
+//     <>
+//       <main className={`${euphoria.className} `}>{children}</main>
+//       <Footer></Footer>
+//     </>
+//   )
+// }

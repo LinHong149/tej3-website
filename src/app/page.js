@@ -1,3 +1,6 @@
+import { Euphoria_Script } from "next/font/google/index.js";
+import { Exo } from "next/font/google/index.js";
+
 import Image from "next/image";
 import Nav from "./components/Nav.jsx"
 import Hero from "./components/Hero.jsx"
@@ -16,7 +19,7 @@ export default function Home() {
       <Bestseller/>
       <Commitment/>
       <Follow/>
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   );
 }
