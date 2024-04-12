@@ -40,5 +40,39 @@ export const constants = {
         gallery4,
         gallery5,
         gallery6
+    ],
+    productsFlavours: [
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
+        {
+            "image": gallery1,
+            "name": "Lemon Raspberry",
+        }, 
     ]
 };
