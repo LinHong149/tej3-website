@@ -6,7 +6,7 @@ import { constants } from '../constants'
 const Footer = () => {
   return (
     <div className='bg-secondary flex flex-col w-full px-[60px] justify-between items-center'>
-        <div className="flex justify-between w-full gap-18 py-24 items-center">
+        <div className="flex justify-between w-full gap-18 py-16 items-center">
             <div className="flex gap-16 items-center">
                 <div className="flex flex-col items-center gap-6">
                     <div className='logo w-fit flex flex-col gap-2 items-center'>
@@ -26,7 +26,7 @@ const Footer = () => {
                 
                 {constants.locationInfo.map(({street, location, schedule}) => (
                     <div className='flex flex-col items-center gap-6 [&>*]:text-center [&>*]:text-main [&>*]:text-lg'>
-                        <p><strong className='text-2xl text-center'>{street}</strong><br/>{location}</p>
+                        <p><strong className='text-2xl text-center font-medium'>{street}</strong><br/>{location}</p>
                         <p className='text-center text-lg text-white w-fit'>{schedule[0].date}<br/>{schedule[0].time}</p>
                         <p className='text-center text-lg text-white w-fit'>{schedule[1].date}<br/>{schedule[1].time}</p>
                     </div>
