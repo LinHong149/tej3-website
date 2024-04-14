@@ -6,7 +6,9 @@ import RootLayout from '../app/layout'; // Adjust the import path to where your 
 export default function App({ Component, pageProps: {session, ...pageProps} }) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <RootLayout>
+        <Component {...pageProps} />
+      </RootLayout>
     </SessionProvider>
   );
 }
