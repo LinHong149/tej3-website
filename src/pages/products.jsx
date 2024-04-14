@@ -16,7 +16,6 @@ export default function Products() {
         <Steps />
         <div className='p-[60px] flex flex-col gap-20'>
             <ProductsNav />
-            {/* Specials */}
             <ProductsFlavours />
         </div>
     </div>
