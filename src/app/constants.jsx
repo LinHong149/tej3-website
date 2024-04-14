@@ -4,12 +4,12 @@ import cookie_dough from "../../public/cookie_dough.png"
 import cookies_cream from "../../public/cookies_cream.png"
 import lemon_raspberry from "../../public/lemon_raspberry.png"
 
-import gallery1 from "../../public/gallery1.png"
-import gallery2 from "../../public/gallery2.png"
-import gallery3 from "../../public/gallery3.png"
-import gallery4 from "../../public/gallery4.png"
-import gallery5 from "../../public/gallery5.png"
-import gallery6 from "../../public/gallery6.png"
+import gallery1 from "../../public/gallery/gallery1.png"
+import gallery2 from "../../public/gallery/gallery2.png"
+import gallery3 from "../../public/gallery/gallery3.png"
+import gallery4 from "../../public/gallery/gallery4.png"
+import gallery5 from "../../public/gallery/gallery5.png"
+import gallery6 from "../../public/gallery/gallery6.png"
 
 export const constants = {
     promotionsInfo: [

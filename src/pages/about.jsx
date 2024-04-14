@@ -5,20 +5,20 @@ import Steps from '@/app/components/Steps'
 import ProductsNav from '@/app/components/ProductsNav'
 import ProductsFlavours from '@/app/components/ProductsFlavours'
 import LoginButton from '@/app/components/LoginButton'
-import ProductsBanner from "../../public/products_banner.png"
+import AboutBanner from "../../public/about_banner.png"
+import AboutDescription from '@/app/components/AboutDescription'
+import AboutImages from '@/app/components/AboutImages'
 
-export default function Products() {
+const about = () => {
   return (
-    <div className='p-0 m-0'>
-        <Banner image={ProductsBanner} />
+    <div>
+        <Banner image={AboutBanner} />
         <Nav />
-        <LoginButton />
-        <Steps />
-        <div className='p-[60px] flex flex-col gap-20'>
-            <ProductsNav />
-            {/* Specials */}
-            <ProductsFlavours />
-        </div>
+        <AboutDescription />
+        <AboutImages />
+        
     </div>
   )
 }
+
+export default about

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import HeroImage from "../../../public/hero_image.png"
 import Button from "./miniComponents/Button.jsx"
 import Nav from './Nav'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -14,7 +15,9 @@ const Hero = () => {
                 <h2 className='text-6xl text-text opacity-50 w-fit title'>Treat yourself.</h2>
                 <h2 className='text-9xl text-text w-fit leading-[7rem] title'>Because you <br />deserve it.</h2>
               </div>
-              <Button text="Find your flavour!"/>
+              <Link href="/products">
+                <Button text="Find your flavour!"/>
+              </Link>
           </div>
         </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { constants } from "../constants"
 import Button from './miniComponents/Button.jsx'
-
+import Link from 'next/link'
 
 const Promotion = () => {
   return (
@@ -15,7 +15,9 @@ const Promotion = () => {
           <div className="flex flex-col items-center gap-8">
             <h2 className='text-8xl text-center w-max title'>{title}</h2>
             <p className='text-lg px-[20%] text-center leading-10'>{description}</p>
-            <Button text="Order now"></Button>
+            <Link href="/products">
+              <Button text="Order now"></Button>
+            </Link>
           </div>
         ))}
     </div>
