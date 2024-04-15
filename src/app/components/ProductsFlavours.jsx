@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { ProductImage } from "./miniComponents/ProductImage"
 import { constants } from '../constants'
+import ProductSpecials from './miniComponents/ProductSpecials'
 
 const ProductsFlavours = () => {
   const [quantities, setQuantities] = useState(constants.productsFlavours.map(product => product.quantity));
 
   return (
-    <div>
-      {/* Specials */}
+    <div className='flex flex-col gap-10'>
+      <ProductSpecials />
       <div className='flex flex-wrap justify-between gap-10'>
         {/* MAKE QUANTITY BASED ON ACCOUNT */}
           {constants.productsFlavours.map(({image, name}) => ( 

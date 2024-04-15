@@ -8,7 +8,7 @@ const Promotion = () => {
   return (
     <div className='h-screen flex justify-between px-[120px] items-center'>
         <div className='relative w-[36rem] h-[36rem]'>
-            <Image className="absolute -top-4 left-4 w-full h-full object-fit" src={constants.promotionsInfo[0].image} alt=""></Image>
+            <Image className="absolute -top-4 left-4 w-full h-full object-cover rounded-full" src={constants.promotionsInfo[0].image} alt=""></Image>
             <div className=' w-[36rem] aspect-square rounded-full bg-highlight'></div>
         </div>
         {constants.promotionsInfo.map(({title, description}) => (
