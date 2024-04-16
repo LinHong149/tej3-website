@@ -25,7 +25,7 @@ const Nav = () => {
           <Link href="/contact" className='title'>Contact</Link>
         </div>
         <div className='rounded-full bg-secondary w-12 h-12 flex items-center pt-1 justify-center'>
-          <Link href=""><FontAwesomeIcon className='w-5 h-5' size='2x' color='white' icon={faShoppingCart} /></Link>
+          <Link href="/cart"><FontAwesomeIcon className='w-5 h-5' size='2x' color='white' icon={faShoppingCart} /></Link>
         </div>
     </div>
   )

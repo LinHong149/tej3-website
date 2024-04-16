@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from "../../public/logo.png"
 
+
 export default function login(){
     const router = useRouter()
     const [email, setEmail] = useState("")
@@ -15,22 +16,7 @@ export default function login(){
     async function onSubmit(event) {
         event.preventDefault()
 
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-          });
-
-        if (!response.ok){
-            console.error("Failed to log in")
-        }
-        else {
-            // Handle response if necessary
-            console.log("Login successful")
-            
-        }
+        
     }
 
 
