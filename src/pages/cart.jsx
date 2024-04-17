@@ -7,7 +7,7 @@ const cart = () => {
   return (
     <div className='p-[120px]'>   
         <Nav />
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-20">
             <CartList />
             <CartSummary />
         </div>
