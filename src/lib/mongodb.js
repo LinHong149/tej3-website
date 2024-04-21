@@ -1,29 +1,30 @@
-// mongodb.js
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
-import { MongoClient } from 'mongodb'
+// Ensure your MongoDB URI is stored in an environment variable for security
+const uri = process.env.MONGO_URI;
 
-const uri = process.env.MONGODBCONNECTION
-const options = {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-}
-
-let client
-let clientPromise
-
-if (!process.env.MONGODB_URI) {
-  throw new Error('Add Mongo URI to .env.local')
-}
-
-if (process.env.NODE_ENV === 'development') {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options)
-    global._mongoClientPromise = client.connect()
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
   }
-  clientPromise = global._mongoClientPromise
-} else {
-  client = new MongoClient(uri, options)
-  clientPromise = client.connect()
+});
+
+let isConnected = false;
+
+async function dbConnection() {
+  if (!isConnected) {
+    try {
+      await client.connect();
+      isConnected = true;
+      console.log("Successfully connected to MongoDB.");
+    } catch (error) {
+      console.error("Failed to connect to MongoDB:", error);
+      throw new Error('Database connection failed');
+    }
+  }
+  return client;
 }
 
-export default clientPromise
+module.exports = dbConnection;

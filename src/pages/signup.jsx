@@ -1,5 +1,4 @@
 import React from 'react'
-import { accountsInfo } from './api/accounts'
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import Nav from '@/app/components/Nav'
@@ -12,11 +11,40 @@ export default function login(){
     const router = useRouter()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [matching, setMatching] = useState(true)
     
-    async function onSubmit(event) {
-        event.preventDefault()
+    function checkPasswords() {
+      if (password !== confirmPassword) {
+        setMatching(false)
+        return false
+      }
+      setMatching(true)
+      return true
+    }
 
-        
+    async function onSubmit(event) {
+      event.preventDefault()
+
+      if (!checkPasswords()){
+        return
+      }
+
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email, password})
+      })
+
+      if (response.ok) {
+        console.log("Created new account")
+        router.push("/signupSuccessful")
+      }
+      else {
+        console.log("Failed in creating account")
+      }
     }
 
 
@@ -63,9 +91,15 @@ export default function login(){
             type="password" 
             id='password' 
             placeholder='⦁ ⦁ ⦁ ⦁ ⦁ ⦁ ⦁ ⦁'
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required />
           </div>
+          {
+                matching ? 
+                ""
+                :
+                <p className='text-red-500 text-md'>* Passwords do not match</p>
+            }
 
           <input type="submit" value="Sign up" className='bg-primary rounded-lg h-14 text-lg pt-1' />
           <p className="text-md w-full text-center">Already have an account? <Link href="/login" className='font-medium'>Log in</Link></p>
