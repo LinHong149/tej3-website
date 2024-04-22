@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import Banner from "../../app/components/miniComponents/Banner"
 import Nav from '../../app/components/Nav'
-import Steps from '@/app/components/Steps'
-import ProductsNav from '@/app/components/ProductsNav'
-import ProductsFlavours from '@/app/components/ProductsFlavours'
-import LoginButton from '@/app/components/LoginButton'
+import ProductsFlavours from '../../app/components/ProductsFlavours'
+import LoginButton from '../../app/components/LoginButton'
 import ProductsBanner from "../../../public/products_banner.png"
 
 export default function Products() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '@/app/components/Nav'
+import Nav from '../app/components/Nav'
 import Link from 'next/link'
 import logo from "../../public/logo.png"
 import Image from 'next/image'

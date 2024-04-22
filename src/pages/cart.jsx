@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from '@/app/components/Nav'
-import CartList from '@/app/components/CartList'
-import CartSummary from '@/app/components/CartSummary'
+import Nav from '../app/components/Nav'
+import CartList from '../app/components/CartList'
+import CartSummary from '../app/components/CartSummary'
 
 const cart = () => {
   return (

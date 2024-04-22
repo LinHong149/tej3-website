@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
-import Nav from '@/app/components/Nav'
+import Nav from '../app/components/Nav'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from "../../public/logo.png"

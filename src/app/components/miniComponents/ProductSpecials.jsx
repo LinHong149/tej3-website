@@ -1,5 +1,6 @@
 import React from 'react'
-import { constants } from '@/app/constants'
+import { constants } from '../../constants'
+// import { constants } from '@/app/constants'
 import Image from 'next/image'
 
 const ProductSpecials = () => {

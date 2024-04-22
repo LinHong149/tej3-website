@@ -1,7 +1,7 @@
 import React from 'react'
-import Banner from '@/app/components/miniComponents/Banner'
-import Nav from '@/app/components/Nav'
-import Location from '@/app/components/Location'
+import Banner from '../app/components/miniComponents/Banner'
+import Nav from '../app/components/Nav'
+import Location from '../app/components/Location'
 import ContactBanner from "../../public/contact_banner.png"
 
 
