@@ -25,6 +25,8 @@ export default function test(){
       body: JSON.stringify({email, password})
     });
 
+    const data = await response.json();
+
     if (!response.ok){
         console.error("Failed to log in :(")
         setHasError(true)
@@ -33,6 +35,7 @@ export default function test(){
         // Handle response if necessary
         console.log("Login successful")
         router.push("/")
+        localStorage.setItem("token", data.token)
     }
   };
 

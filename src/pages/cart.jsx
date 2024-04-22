@@ -5,7 +5,7 @@ import CartSummary from '../app/components/CartSummary'
 
 const cart = () => {
   return (
-    <div className='p-[120px]'>   
+    <div className='p-[120px] pt-[20vh]'>   
         <Nav />
         <div className="flex justify-between gap-20">
             <CartList />
