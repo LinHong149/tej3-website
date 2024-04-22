@@ -11,6 +11,7 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 const index = () => {
   const router = useRouter()
   const { product } = router.query
+  const num = 0
 
   const [productIndex, setProductIndex] = useState(-1);
 
@@ -61,7 +62,7 @@ const index = () => {
               <p className="text-sm">Quantity</p>
               <div className='flex flex-row items-center justify-between p-2 border-text border rounded-md w-fit'>
                 <FontAwesomeIcon className='w-5 h-5' size='1x' color='black' icon={faMinus} />
-                {/* {num} */}
+                {num}
                 <FontAwesomeIcon className='w-5 h-5' size='1x' color='black' icon={faPlus} />
               </div>
             </div>

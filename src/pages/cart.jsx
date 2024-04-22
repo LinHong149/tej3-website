@@ -4,6 +4,8 @@ import CartList from '../app/components/CartList'
 import CartSummary from '../app/components/CartSummary'
 
 const cart = () => {
+
+  
   return (
     <div className='p-[120px] pt-[20vh]'>   
         <Nav />

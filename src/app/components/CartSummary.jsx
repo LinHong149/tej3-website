@@ -1,20 +1,20 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
 
 const CartSummary = ({nProducts, price}) => {
-    const { status } = useSession()
     const [checkoutPath, setCheckoutPath] = useState("/login")
-
+    
+    
     useEffect(() => {
-        if (status === "authenticated") {
+        const token = localStorage.getItem("token")
+        if (token) {
             setCheckoutPath("/checkout");
         } else {
             setCheckoutPath("/login");
         }
 
-    }, [status]);
+    }, []);
 
   return (
     <div className='flex flex-col gap-6 p-10 min-w-[30vw] border rounded-[2rem]'>
