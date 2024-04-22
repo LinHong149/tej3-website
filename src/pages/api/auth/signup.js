@@ -13,7 +13,25 @@ export default async function handler(req, res) {
       if (!user) {
         await usersCollection.insertOne({
             email: email,
-            password: password
+            password: password,
+            cart: [
+              {"Chocolate Raspberry": 0},
+              {"Raspberry Lemon": 0},
+              {"Cookie Dough": 0},
+              {"Cookies & Cream": 0},
+              {"Butter Pecan": 0},
+              {"Salted Caramel": 0},
+              {"Cookie Butter": 0},
+              {"Champagne": 0},
+              {"Blood Orange": 0},
+              {"Cranberry": 0},
+              {"Tiramisu": 0},
+              {"Chocolate Rose": 0},
+              {"Pumpkin Pie": 0},
+              {"Neapolitan": 0},
+              {"Strawberry": 0},
+              {"Chocolate Cherry": 0}
+          ]
         })
         return res.status(200).json({ message: "Created new user" });
       }
