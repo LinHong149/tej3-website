@@ -1,7 +1,7 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 // Ensure your MongoDB URI is stored in an environment variable for security
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri, {
   serverApi: {
