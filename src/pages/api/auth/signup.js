@@ -1,5 +1,6 @@
 const dbConnection = require('../../../lib/mongodb');
 
+
 export default async function handler(req, res) {
   try {
     const client = await dbConnection();
@@ -15,23 +16,71 @@ export default async function handler(req, res) {
             email: email,
             password: password,
             cart: [
-              {"Chocolate Raspberry": 0},
-              {"Raspberry Lemon": 0},
-              {"Cookie Dough": 0},
-              {"Cookies & Cream": 0},
-              {"Butter Pecan": 0},
-              {"Salted Caramel": 0},
-              {"Cookie Butter": 0},
-              {"Champagne": 0},
-              {"Blood Orange": 0},
-              {"Cranberry": 0},
-              {"Tiramisu": 0},
-              {"Chocolate Rose": 0},
-              {"Pumpkin Pie": 0},
-              {"Neapolitan": 0},
-              {"Strawberry": 0},
-              {"Chocolate Cherry": 0}
-          ]
+              {
+                product: "Chocolate Raspberry",
+                quantity: 0
+              },
+              {
+                product: "Raspberry Lemon",
+                quantity: 0
+              },
+              {
+                product: "Cookie Dough",
+                quantity: 0
+              },
+              {
+                product: "Cookies & Cream",
+                quantity: 0
+              },
+              {
+                product: "Butter Pecan",
+                quantity: 0
+              },
+              {
+                product: "Salted Caramel",
+                quantity: 0
+              },
+              {
+                product: "Cookie Butter",
+                quantity: 0
+              },
+              {
+                product: "Champagne",
+                quantity: 0
+              },
+              {
+                product: "Blood Orange",
+                quantity: 0
+              },
+              {
+                product: "Cranberry",
+                quantity: 0
+              },
+              {
+                product: "Tiramisu",
+                quantity: 0
+              },
+              {
+                product: "Chocolate Rose",
+                quantity: 0
+              },
+              {
+                product: "Pumpkin Pie",
+                quantity: 0
+              },
+              {
+                product: "Neapolitan",
+                quantity: 0
+              },
+              {
+                product: "Strawberry",
+                quantity: 0
+              },
+              {
+                product: "Chocolate Cherry",
+                quantity: 0
+              }
+            ]
         })
         return res.status(200).json({ message: "Created new user" });
       }

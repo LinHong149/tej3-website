@@ -6,12 +6,19 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
-
+import Button from "../../../app/components/miniComponents/Button"
 
 const index = () => {
   const router = useRouter()
   const { product } = router.query
-  const num = 0
+  const [num, setNum] = useState(0)
+
+  const handleDecrement = () => {
+    setNum(prevNum => Math.max(0, prevNum-1))
+  }
+  const handleIncrement = () => {
+    setNum(prevNum => prevNum+1)
+  }
 
   const [productIndex, setProductIndex] = useState(-1);
 
@@ -38,6 +45,37 @@ const index = () => {
   };
 
 
+  // Check that num is not 0
+  async function AddToCart () {
+    if (num === 0) {
+      console.log("Quantity must be greater than zero");
+      return;
+    }
+  
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.log("No token found, please log in");
+      return;
+    }
+
+    const response = await fetch("/api/addToCart", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({product, num})
+    })
+
+    if (!response.ok) {
+      console.log("Could not add to cart")
+    }
+    else {
+      console.log("Added to Cart")
+    }
+  }
+
+
   return (
     <div className='flex flex-col gap-10 px-[120px] py-[20vh]'>
         <Nav />
@@ -60,12 +98,16 @@ const index = () => {
             
             <div className='flex flex-col'>
               <p className="text-sm">Quantity</p>
-              <div className='flex flex-row items-center justify-between p-2 border-text border rounded-md w-fit'>
-                <FontAwesomeIcon className='w-5 h-5' size='1x' color='black' icon={faMinus} />
+              <div className='flex flex-row items-center justify-between px-2 py-1 border-text border rounded-md w-fit gap-2'>
+                <FontAwesomeIcon onClick={handleDecrement} className='w-5 h-5' size='1x' color='black' icon={faMinus} />
+                <p className='text-xl min-w-6 text-center pt-1'>
                 {num}
-                <FontAwesomeIcon className='w-5 h-5' size='1x' color='black' icon={faPlus} />
+                </p>
+                <FontAwesomeIcon onClick={handleIncrement} className='w-5 h-5' size='1x' color='black' icon={faPlus} />
               </div>
             </div>
+
+            <div onClick={() => AddToCart()} className='flex items-center justify-center bg-secondary px-[40px] py-[16px] opacity-60 font-medium rounded-3xl w-full text-main text-lg'>Add To Cart</div>
           </div>
         
         </div>

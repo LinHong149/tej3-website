@@ -11,9 +11,9 @@ export default function Products() {
     <div className='p-0 m-0'>
         <Banner image={ProductsBanner} />
         <Nav />
-        <LoginButton />
+        {/* <LoginButton /> */}
         {/* <Steps /> */}
-        <div className='p-[60px] flex flex-col gap-20'>
+        <div className='p-[60px] pt-[120px] flex flex-col gap-20'>
           {/* <div className='flex flex-col gap-2'>
               <div className='flex flex-row gap-10 [&>*]:textlgl'>
                   <button onClick={() => setActiveTab("box")}>Pick a box</button>
