@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { constants } from '../constants.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CartList = ({nProducts, price}) => {
     const [ cartList, setCartList ] = useState([])
@@ -60,8 +61,30 @@ const CartList = ({nProducts, price}) => {
             <p>{error}</p>
         ) : cartList.length > 0 ? (
             cartList.map((item, index) => (
-                <div key={index}>
-                    <p>{item.product} - Quantity: {item.quantity}</p>
+                <div key={index} className="flex justify-between gap-10">
+                    <div className='flex gap-4'>
+                        <Image 
+                            className='w-32'
+                            src={constants.productsFlavours.find(product => product.name === item.product).image} alt={item.product}
+                            />
+                        
+                        <div className="flex flex-col h-full justify-between">
+                            <p className='text-xl'>{item.product} Macarons</p>
+
+                            <div className='flex flex-row items-center justify-between px-2 py-1 border-text border rounded-md w-fit gap-2'>
+                                {/* <FontAwesomeIcon onClick={handleDecrement} className='w-5 h-5' size='1x' color='black' icon={faMinus} /> */}
+                                <p className='text-xl min-w-6 text-center pt-1'>
+                                {item.quantity}
+                                </p>
+                                {/* <FontAwesomeIcon onClick={handleIncrement} className='w-5 h-5' size='1x' color='black' icon={faPlus} /> */}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center justify-center">
+                        <p className='font-medium'>${((constants.productsFlavours.find(product => product.name === item.product).price)*item.quantity).toFixed(2)}</p>
+                    </div>
+
                 </div>
             ))
         ) : (
