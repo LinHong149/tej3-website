@@ -9,6 +9,7 @@ const CartList = ({nProducts, price}) => {
     const [ cartList, setCartList ] = useState([])
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [loggedOut, setLoggedOut] = useState(false)
     
     
     useEffect(() => {
@@ -16,6 +17,7 @@ const CartList = ({nProducts, price}) => {
             const token = localStorage.getItem("token")
             if (!token) {
                 console.log("No token found, please log in");
+                setLoggedOut(true)
                 return;
             }
 
@@ -57,6 +59,8 @@ const CartList = ({nProducts, price}) => {
 
         {isLoading ? (
             <p>Loading...</p>
+        ) : loggedOut ? (
+            <p>Log in to view your items.</p>
         ) : error ? (
             <p>{error}</p>
         ) : cartList.length > 0 ? (
