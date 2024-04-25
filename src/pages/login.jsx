@@ -34,8 +34,9 @@ export default function test(){
     else {
         // Handle response if necessary
         console.log("Login successful")
+        document.cookie = `token=${data.token}; path=/`
         router.push("/")
-        localStorage.setItem("token", data.token)
+        // localStorage.setItem("token", data.token)
     }
   };
 
