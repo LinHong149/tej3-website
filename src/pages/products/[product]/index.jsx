@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import Nav from '../../../app/components/Nav'
+import Suggestions from '../../../app/components/Suggestions'
 import { constants } from '../../../app/constants'
 import Image from 'next/image'
 import Link from 'next/link';
@@ -11,7 +12,8 @@ import Button from "../../../app/components/miniComponents/Button"
 const index = () => {
   const router = useRouter()
   const { product } = router.query
-  const [num, setNum] = useState(0)
+  const [num, setNum] = useState(1)
+  const [addToCartFailed, setAddToCartFailed] = useState(false)
 
   const handleDecrement = () => {
     setNum(prevNum => Math.max(0, prevNum-1))
@@ -33,7 +35,7 @@ const index = () => {
     return <div>Loading...</div>; // or some error message or fallback UI
   }
 
-  const { image, description } = constants.productsFlavours[productIndex];
+  const { image, description, price } = constants.productsFlavours[productIndex];
 
   const renderDescription = (description) => {
     return description.split('<br/>').map((line, index) => (
@@ -55,6 +57,8 @@ const index = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       console.log("No token found, please log in");
+      router.push("/login")
+      // setAddToCartFailed(true)
       return;
     }
 
@@ -107,10 +111,18 @@ const index = () => {
               </div>
             </div>
 
-            <div onClick={() => AddToCart()} className='flex items-center justify-center bg-secondary px-[40px] py-[16px] opacity-60 font-medium rounded-3xl w-full text-main text-lg'>Add To Cart</div>
+            <p className="font-medium text-xl">${(price*num).toFixed(2)}</p>
+
+            <div className='flex flex-col gap-2 items-center'>
+              <div onClick={() => AddToCart()} className='flex items-center justify-center bg-secondary px-[40px] py-[16px] opacity-60 font-medium rounded-3xl w-full text-main text-lg'>Add To Cart</div>
+              {/* {addToCartFailed ?
+              <p className="text-red-500 text-xm">Please log in to add to cart.</p>
+              : ""} */}
+            </div>
           </div>
-        
         </div>
+
+        <Suggestions />
     </div>
   )
 }

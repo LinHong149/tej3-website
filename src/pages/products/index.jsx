@@ -11,23 +11,8 @@ export default function Products() {
     <div className='p-0 m-0'>
         <Banner image={ProductsBanner} />
         <Nav />
-        {/* <LoginButton /> */}
-        {/* <Steps /> */}
-        <div className='p-[60px] pt-[120px] flex flex-col gap-20'>
-          {/* <div className='flex flex-col gap-2'>
-              <div className='flex flex-row gap-10 [&>*]:textlgl'>
-                  <button onClick={() => setActiveTab("box")}>Pick a box</button>
-                  <button onClick={() => setActiveTab("flavour")}>Choose your flavours</button>
-                  <button onClick={() => setActiveTab("checkout")}>Place your order</button>
-              </div>
-              <hr className='w-full border-text' />
-          </div> */}
-
-          {/* {activeTab === "box" && <Box/>} */}
-          {/* {activeTab === "flavour" && <Flavour/>} */}
+        <div className='p-[60px] pt-[120px] pb-[250px] flex flex-col gap-20'>
           <ProductsFlavours/>
-          {/* {activeTab === "checkout" && <Checkout/>} */}
-            {/* <ProductsFlavours /> */}
         </div>
     </div>
   )
