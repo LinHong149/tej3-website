@@ -37,7 +37,8 @@ export const constants = {
         {
             "title" : "Valentines Special",
             "description" : "A tender French macaron shell, filled with dark chocolate ganache and a tart raspberry compote is the best shared with a significant other.",
-            "image" : valentines_promotion
+            "image" : valentines_promotion,
+            "link": "/products/Chocolate%20Raspberry"
         }
     ],
     bestsellersInfo: [
@@ -47,7 +48,7 @@ export const constants = {
         },
         {
             "image": lemon_raspberry,
-            "product": "Lemon Raspberry"
+            "product": "Raspberry Lemon"
         },
         {
             "image": cookies_cream,
