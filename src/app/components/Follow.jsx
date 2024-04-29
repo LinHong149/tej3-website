@@ -8,7 +8,7 @@ const Follow = () => {
         <span className='flex flex-row gap-4'>
             <h2 className="title text-8xl">Follow us</h2>
             <div className='relative hover:opacity-50'>
-                <a className="title text-8xl text-text" href=''>@macaronbakery</a>
+                <a className="title text-8xl text-text" href='https://www.instagram.com'>@macaronbakery</a>
                 <hr className='w-full absolute bottom-2 border-text border-[1.5px]' />
             </div>
         </span>
