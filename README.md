@@ -6,6 +6,7 @@ This application was developed as part of my TEJ3 assignment and serves as an e-
 
 The project not only fulfills the requirement to create a functional and user-friendly online store but also provided me with an invaluable opportunity to delve into new technologies. I chose to use MongoDB for the database management system, taking this project as a perfect opportunity to learn and understand the capabilities of working with a NoSQL database in a real-world application setting. This learning experience was particularly enriching, allowing me to gain hands-on experience with database operations essential for modern web development.
 
+![MongoDB Database](https://cdn.discordapp.com/attachments/1070372249959407646/1234323027861311498/image.png?ex=66305066&is=662efee6&hm=bac319489d6b6bd9d2cc71a22a561fc123680b3bf33a987801c11b9068e4508d&)
 
 ## How I Built It
 
@@ -13,8 +14,6 @@ The project not only fulfills the requirement to create a functional and user-fr
 - **Frontend**: The user interface was developed using Next.js, leveraging React for its efficient rendering capabilities. Tailwind CSS was employed to handle the application's styling, thanks to its utility-first approach which significantly accelerates the development process.
 - **Database**: MongoDB was chosen for its flexibility with document schemas, making it ideal for the dynamic and varied data needs of the application.
 - **Authentication**: Authentication is handled through JWT tokens, ensuring secure data transmission and session management.
-
-![MongoDB Database](https://cdn.discordapp.com/attachments/1070372249959407646/1234323027861311498/image.png?ex=66305066&is=662efee6&hm=bac319489d6b6bd9d2cc71a22a561fc123680b3bf33a987801c11b9068e4508d&)
 
 ### Development Tools
 - **Version Control**: Git and GitHub for source code management and version control.
@@ -51,7 +50,6 @@ npm run dev
 ```
 
 Navigate to **http://localhost:3000** to view the application.
-
 
 ## Features
 
