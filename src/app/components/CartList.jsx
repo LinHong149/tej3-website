@@ -12,9 +12,15 @@ const CartList = ({nProducts, price}) => {
     const [loggedOut, setLoggedOut] = useState(false)
     
     
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
     useEffect(() => {
         async function GetList () {
-            const token = localStorage.getItem("token")
+            const token = getCookie("token")
             if (!token) {
                 console.log("No token found, please log in");
                 setLoggedOut(true)
@@ -60,7 +66,10 @@ const CartList = ({nProducts, price}) => {
         {isLoading ? (
             <p>Loading...</p>
         ) : loggedOut ? (
-            <p>Log in to view your items.</p>
+            <div className='flex flex-col gap-4'>
+                <p>Log in to view your items.</p>
+                <Link className='bg-primary rounded-lg h-14 text-lg pt-1 flex items-center justify-center w-40' href="/login">Log in</Link>
+            </div>
         ) : error ? (
             <p>{error}</p>
         ) : cartList.length > 0 ? (
