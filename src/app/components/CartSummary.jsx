@@ -65,7 +65,7 @@ const CartSummary = () => {
 
     return (
         
-        <div className='flex flex-col gap-6 p-10 w-[35vw] border rounded-[2rem]'>
+        <div className='flex flex-col gap-6 p-10 w-[35vw] border rounded-[2rem] h-fit'>
             <h2 className="title text-5xl">Order Summary</h2>
             <div className='flex flex-col gap-4'>
                 <div className="flex justify-between w-full">
