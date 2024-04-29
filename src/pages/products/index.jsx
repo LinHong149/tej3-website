@@ -3,7 +3,7 @@ import Banner from "../../app/components/miniComponents/Banner"
 import Nav from '../../app/components/Nav'
 import ProductsFlavours from '../../app/components/ProductsFlavours'
 import LoginButton from '../../app/components/LoginButton'
-import ProductsBanner from "../../../public/products_banner.png"
+import ProductsBanner from "../../../public/products_banner.jpeg"
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState("box")

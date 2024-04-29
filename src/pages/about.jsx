@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from "../app/components/miniComponents/Banner"
 import Nav from '../app/components/Nav'
-import AboutBanner from "../../public/about_banner.png"
+import AboutBanner from "../../public/about_banner.jpeg"
 import AboutDescription from '../app/components/AboutDescription'
 import AboutImages from '../app/components/AboutImages'
 
