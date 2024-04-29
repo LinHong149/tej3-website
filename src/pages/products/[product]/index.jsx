@@ -14,6 +14,12 @@ const index = () => {
   const { product } = router.query
   const [num, setNum] = useState(1)
   const [addToCartFailed, setAddToCartFailed] = useState(false)
+  
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
 
   const handleDecrement = () => {
     setNum(prevNum => Math.max(0, prevNum-1))
@@ -47,6 +53,7 @@ const index = () => {
   };
 
 
+
   // Check that num is not 0
   async function AddToCart () {
     if (num === 0) {
@@ -54,7 +61,7 @@ const index = () => {
       return;
     }
   
-    const token = localStorage.getItem("token");
+    const token = getCookie("token")
     if (!token) {
       console.log("No token found, please log in");
       router.push("/login")
